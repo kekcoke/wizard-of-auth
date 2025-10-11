@@ -1,0 +1,6 @@
+@wizard_of_auth_HostAddress = http://localhost:5134
+
+GET {{wizard_of_auth_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

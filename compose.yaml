@@ -1,0 +1,6 @@
+﻿services:
+  wizard-of-auth:
+    image: wizard-of-auth
+    build:
+      context: .
+      dockerfile: wizard-of-auth/Dockerfile
