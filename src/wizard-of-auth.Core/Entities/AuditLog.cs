@@ -2,10 +2,18 @@ namespace wizard_of_auth.Core.Entities;
 
 public class AuditLog
 {
+    public Guid Id { get; set; }
+    public Guid TenantId { get; set; }
+    public Guid? UserId { get; set; }
+    public string EventType { get; set; } = string.Empty;
+    public string? IpAddress { get; set; } // add validation
+    public string? UserAgent { get; set; } // add validation
+    public string Details { get; set; } = "{}"; // JSON string for additional details
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
     public DateTime DeletedAt { get; set; }
     public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+    public bool Success { get; set; }
     
     public string Action { get; set; }
     

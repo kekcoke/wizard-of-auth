@@ -4,6 +4,9 @@ public class User
 {
     public Guid Id { get; private set; }
     public string Email { get; private set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string PhoneNumber { get; set; }
     public string PasswordHash { get; private set; }
     public bool EmailVerified { get; private set; }
     public bool MfaEnabled { get; private set; }
@@ -12,14 +15,23 @@ public class User
     public DateTime? LastLoginAt { get; private set; }
     public bool IsLocked { get; private set; }
     public int FailedLoginAttempts { get; private set; }
-    
     public bool IsDeleted { get; private set; }
+    public List<Session> Sessions { get; set; }
     
     // Private constructor for EF Core or controlled creation
-    private User(Guid id, string email, string passwordHash)
+    private User(Guid id, 
+        string email, 
+        string firstName,
+        string lastName,
+        string phoneNumber,
+        string passwordHash)
+    
     {
         Id = id;
         Email = email;
+        FirstName = firstName;
+        LastName = lastName;
+        PhoneNumber = phoneNumber;
         PasswordHash = passwordHash;
         EmailVerified = false;
         MfaEnabled = false;
@@ -27,12 +39,13 @@ public class User
         CreatedAt = DateTime.UtcNow;
         FailedLoginAttempts = 0;
         IsDeleted = false;
+        Sessions = new List<Session>();
     }
     
     // Static to keep domain logic clean
-    public static User Create(string email, string passwordHash)
+    public static User Create(string email, string firstName, string lastName, string phoneNumber, string passwordHash)
     {
-        return new User(Guid.NewGuid(), email, passwordHash);
+        return new User(Guid.NewGuid(), email, firstName, lastName, phoneNumber, passwordHash);
     }
 
     public void RecordSuccessfulLogin()
