@@ -15,8 +15,10 @@ public class User
     public DateTime? LastLoginAt { get; private set; }
     public bool IsLocked { get; private set; }
     public int FailedLoginAttempts { get; private set; }
-    public bool IsDeleted { get; private set; }
+    public bool IsDeleted { get; set; }
+    public DateTime? DeletedAt { get; set; }
     public List<Session> Sessions { get; set; }
+    public Guid TenantId { get; set; }
     
     // Private constructor for EF Core or controlled creation
     private User(Guid id, 
