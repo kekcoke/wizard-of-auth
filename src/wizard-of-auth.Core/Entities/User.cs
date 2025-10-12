@@ -13,6 +13,8 @@ public class User
     public bool IsLocked { get; private set; }
     public int FailedLoginAttempts { get; private set; }
     
+    public bool IsDeleted { get; private set; }
+    
     // Private constructor for EF Core or controlled creation
     private User(Guid id, string email, string passwordHash)
     {
@@ -24,6 +26,7 @@ public class User
         MfaMethods = new List<string>();
         CreatedAt = DateTime.UtcNow;
         FailedLoginAttempts = 0;
+        IsDeleted = false;
     }
     
     // Static to keep domain logic clean

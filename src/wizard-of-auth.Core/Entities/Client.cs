@@ -11,6 +11,7 @@ public class Client
     public int AccessTokenLifetime { get; private set; }
     public bool RequirePkce { get; private set; }
     public Guid TenantId { get; private set; }
+    public bool IsDeleted { get; private set; }
 
     public Client(Guid clientId, 
         string clientSecret, 
@@ -26,6 +27,7 @@ public class Client
         AccessTokenLifetime = 3600;
         RequirePkce = false;
         TenantId = tenantId;
+        IsDeleted = false;
     }
     
     public static Client Create(Guid clientId,
