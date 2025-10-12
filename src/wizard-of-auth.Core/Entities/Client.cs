@@ -2,7 +2,7 @@ namespace wizard_of_auth.Core.Entities;
 
 public class Client
 {
-    public string ClientId { get; private set; }
+    public Guid ClientId { get; private set; }
     public string ClientSecret { get; private set; }
     public string Name { get; private set; }
     public List<string> RedirectUris { get; private set; }
@@ -18,7 +18,7 @@ public class Client
         string name,
         Guid tenantId)
     {
-        ClientId = clientId.ToString();
+        ClientId = clientId;
         ClientSecret = clientSecret;
         Name = name;
         RedirectUris = new List<string>();
