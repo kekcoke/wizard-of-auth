@@ -5,7 +5,7 @@ public class AuthorizationCode
     public Guid Id { get; set; }
     public string Code { get; set; } = null!;
     public Guid UserId { get; set; }
-    public string ClientId { get; set; } = string.Empty;
+    public Guid ClientId { get; set; }
     public string RedirectUri { get; set; } = string.Empty;
     public List<string> Scopes { get; set; } = new();
     public DateTime CreatedAt { get; set; }
