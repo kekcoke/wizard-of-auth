@@ -14,7 +14,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<Token> Tokens => Set<Token>();
     public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
     public DbSet<AuditLog> AuditLogs => Set<AuditLog>();
-    public DbSet<UserSession> UserSessions => Set<UserSession>();
+    public DbSet<Session> Sessions => Set<Session>();
     // public DbSet<IdentityProvider> IdentityProviders => Set<IdentityProvider>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

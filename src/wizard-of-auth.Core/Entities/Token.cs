@@ -6,7 +6,7 @@ public class Token
     public string Value { get; set; } = string.Empty;
     public string Type { get; set; } = string.Empty; // AccessToken, RefreshToken, etc.
     public Guid UserId { get; set; }
-    public string ClientId { get; set; } = string.Empty;
+    public Guid ClientId { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime ExpiresAt { get; set; }
     public bool IsRevoked { get; set; }

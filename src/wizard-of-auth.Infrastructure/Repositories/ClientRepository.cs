@@ -17,7 +17,7 @@ public class ClientRepository : IClientRepository
     public async Task<Client?> GetByClientIdAsync(Guid clientId, CancellationToken ct = default)
     {
         return await _context.Clients
-            .FirstOrDefaultAsync(c => c.ClientId == clientId, ct);
+            .FirstOrDefaultAsync(c => c.Id == clientId, ct);
     }
 
     public async Task<Client?> GetByIdAsync(Guid id, CancellationToken ct = default)

@@ -5,7 +5,7 @@ public class RefreshToken
     public Guid Id { get; set; }
     public string Token { get; set; } = string.Empty;
     public Guid UserId { get; set; }
-    public string ClientId { get; set; } = string.Empty;
+    public Guid ClientId { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime ExpiresAt { get; set; }
     public bool IsUsed { get; set; }
