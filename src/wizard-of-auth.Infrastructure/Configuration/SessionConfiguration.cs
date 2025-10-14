@@ -30,6 +30,9 @@ public class SessionConfiguration : IEntityTypeConfiguration<Session>
 
         builder.Property(s => s.UserAgent)
             .HasMaxLength(500);
+
+        builder.Property(s => s.AuthenticationMethod)
+            .IsRequired();
         
         // Indices
         builder.HasIndex(s => s.ExpiresAt);
