@@ -11,7 +11,7 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<User> Users => Set<User>();
     public DbSet<Client> Clients => Set<Client>();
-    public DbSet<Token> Tokens => Set<Token>();
+    public DbSet<AccessToken> Tokens => Set<AccessToken>();
     public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
     public DbSet<AuditLog> AuditLogs => Set<AuditLog>();
     public DbSet<Session> Sessions => Set<Session>();

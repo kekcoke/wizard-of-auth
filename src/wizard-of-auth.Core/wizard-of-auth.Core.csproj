@@ -5,6 +5,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>wizard_of_auth.Core</RootNamespace>
+    <Description>
+      Core library/Domain layer for Wizard of Auth, providing essential authentication and authorization functionalities.
+      Contains shared models/entities and utilities used across different layers of the application.
+      Also incudes core abstractions and interfaces for services and repositories,
+      business logic contracts, value obejcts and domain exceptions.
+    </Description>
   </PropertyGroup>
 
   <ItemGroup>
