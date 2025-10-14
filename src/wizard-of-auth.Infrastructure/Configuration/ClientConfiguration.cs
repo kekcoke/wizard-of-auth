@@ -14,23 +14,18 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
         
         builder.HasIndex(c => c.Id)
             .IsUnique();
-
-        builder.Property(c => c.ClientSecret)
-            .HasMaxLength(256);
+        
+        builder.HasOne<Tenant>()
+            .WithMany(t => t.Clients)
+            .HasForeignKey(c => c.TenantId);
 
         builder.Property(c => c.Name)
             .IsRequired()
             .HasMaxLength(200);
-
+        
         builder.Property(c => c.Description)
             .HasMaxLength(1000);
-
-        builder.Property(c => c.RedirectUris)
-            .HasConversion(
-                v => string.Join('|', v),
-                v => v.Split('|', StringSplitOptions.RemoveEmptyEntries).ToList()
-            );
-
+        
         builder.Property(c => c.AllowedScopes)
             .HasConversion(
                 v => string.Join(',', v),
@@ -43,11 +38,11 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
                 v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList()
             );
 
-        builder.HasOne<Tenant>()
-            .WithMany(t => t.Clients)
-            .HasForeignKey(c => c.TenantId);
-
-        builder.HasIndex(c => new { c.TenantId, c.Id });
+        builder.Property(c => c.RedirectUris)
+            .HasConversion(
+                v => string.Join('|', v),
+                v => v.Split('|', StringSplitOptions.RemoveEmptyEntries).ToList()
+            );
 
         builder.Property(c => c.AccessTokenLifetime)
             .IsRequired()
@@ -60,7 +55,14 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
         builder.Property(c => c.IsDeleted)
             .IsRequired()
             .HasDefaultValue(false);
+                
+        builder.Property(c => c.ClientSecret)
+            .HasMaxLength(256);
+
+        // Index
+        builder.HasIndex(c => new { c.TenantId, c.Id });
         
+        // Query filter
         builder.HasQueryFilter(c => !c.IsDeleted);
     }
 }

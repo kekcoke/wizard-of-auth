@@ -3,17 +3,17 @@ namespace wizard_of_auth.Core.Entities;
 public class Client
 {
     public Guid Id { get; private set; }
-    public string ClientSecret { get; private set; }
+    public Guid TenantId { get; private set; }
     public string Name { get; private set; }
-    public List<string> RedirectUris { get; private set; }
+    public string Description { get; set; } = string.Empty;
     public List<string> AllowedScopes { get; private set; }
     public List<string> AllowedGrantTypes { get; private set; }
+    public List<string> RedirectUris { get; private set; }
     public int AccessTokenLifetime { get; private set; }
     public bool RequirePkce { get; private set; }
-    public Guid TenantId { get; private set; }
     public bool IsDeleted { get; private set; }
-    public string Description { get; set; } = string.Empty;
-
+    public string ClientSecret { get; private set; }
+    
     public Client(Guid clientId, 
         string clientSecret, 
         string name,
