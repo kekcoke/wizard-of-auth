@@ -9,13 +9,18 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
     public void Configure(EntityTypeBuilder<User> builder)
     {
         builder.HasKey(u => u.Id);
+        
+        // Value object configuration for Email
+        builder.OwnsOne(u => u.Email, vo =>
+        {
+            vo.Property(v => v.Value)
+                .IsRequired()
+                .HasColumnName("Email")
+                .HasMaxLength(256);
 
-        builder.Property(u => u.Email)
-            .IsRequired()
-            .HasMaxLength(256);
-
-        builder.HasIndex(u => u.Email)
-            .IsUnique();
+            vo.HasIndex(v => v.Value)
+                .IsUnique();
+        });
         
         builder.Property(u => u.FirstName)
             .HasMaxLength(100);
@@ -66,16 +71,20 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .WithOne()
             .HasForeignKey(s => s.UserId)
             .OnDelete(DeleteBehavior.Cascade);
-
-        builder.Property(u => u.PasswordHash)
-            .IsRequired()
-            .HasMaxLength(256);
         
         builder.HasMany<RefreshToken>()
             .WithOne(rt => rt.User)
             .HasForeignKey(rt => rt.UserId)
             .OnDelete(DeleteBehavior.Cascade);
 
+        // Value object configuration for HashedPassword
+        builder.OwnsOne(u => u.HashedPassword, vo =>
+        {
+            vo.Property(v => v.Value)
+                .IsRequired()
+                .HasMaxLength(256);
+        });
+        
         // Multi-tenancy
         builder.HasOne<Tenant>()
             .WithMany(t => t.Users)

@@ -4,7 +4,7 @@ using System.Text;
 namespace wizard_of_auth.Core.ValueObjects;
 
 /// <summary>
-/// Hashed password value object, prventing direct access to the raw password as string.
+/// Hashed password value object, preventing direct access to the raw password as string.
 /// </summary>
 public sealed record HashedPassword
 {

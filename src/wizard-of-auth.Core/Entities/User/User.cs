@@ -1,10 +1,13 @@
+using Microsoft.AspNetCore.Identity;
+using wizard_of_auth.Core.ValueObjects;
+
 namespace wizard_of_auth.Core.Entities;
 
 public class User
 {
     public Guid Id { get; private set; }
     public Guid TenantId { get; set; }
-    public string Email { get; private set; }
+    public EmailAddress Email { get; private set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string PhoneNumber { get; set; }
@@ -18,7 +21,7 @@ public class User
     public bool IsDeleted { get; set; }
     public DateTime? DeletedAt { get; set; }
     public List<Session> Sessions { get; set; }
-    public string PasswordHash { get; private set; }
+    public HashedPassword HashedPassword { get; private set; }
     
     // Private constructor for EF Core or controlled creation
     private User(Guid id, 
@@ -27,14 +30,13 @@ public class User
         string lastName,
         string phoneNumber,
         string passwordHash)
-    
     {
         Id = id;
-        Email = email;
+        Email = EmailAddress.Create(email);
         FirstName = firstName;
         LastName = lastName;
         PhoneNumber = phoneNumber;
-        PasswordHash = passwordHash;
+        HashedPassword = HashedPassword.FromHash(passwordHash);
         EmailVerified = false;
         MfaEnabled = false;
         MfaMethods = new List<string>();

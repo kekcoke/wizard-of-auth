@@ -46,14 +46,14 @@ public class UserRepository : IUserRepository
     public async Task<User?> GetByEmailAsync(string email, CancellationToken ct = default)
     {
         return await _context.Users
-            .FirstOrDefaultAsync(u => u.Email.ToLower() == email.ToLower(), ct);
+            .FirstOrDefaultAsync(u => u.Email.Value.ToLower() == email.ToLower(), ct);
     }
 
     public async Task<User?> GetByEmailAndTenantAsync(string email, Guid tenantId, CancellationToken ct = default)
     {
         return await _context.Users
             .FirstOrDefaultAsync(u => 
-                u.Email.ToLower() == email.ToLower() 
+                u.Email.Value.ToLower() == email.ToLower() 
                 && u.TenantId == tenantId, ct);
     }
 
@@ -155,6 +155,6 @@ public class UserRepository : IUserRepository
 
     public async Task<bool> ExistsAsync(string email, CancellationToken ct = default)
     {
-        return await _context.Users.AnyAsync(u => u.Email.ToLower() == email.ToLower(), ct);
+        return await _context.Users.AnyAsync(u => u.Email.Value.ToLower() == email.ToLower(), ct);
     }
 }
