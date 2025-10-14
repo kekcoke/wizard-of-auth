@@ -8,5 +8,6 @@ public enum TokenRevocationReason
     InvalidIssuer,
     InvalidAudience,
     InvalidClaims,
-    Malformed
+    Malformed,
+    UserRequest
 }
