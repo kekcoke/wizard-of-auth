@@ -16,15 +16,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.HasIndex(u => u.Email)
             .IsUnique();
-
-        builder.Property(u => u.EmailVerified)
-            .IsRequired()
-            .HasDefaultValue(false);
-
-        builder.Property(u => u.PasswordHash)
-            .IsRequired()
-            .HasMaxLength(256);
-
+        
         builder.Property(u => u.FirstName)
             .HasMaxLength(100);
 
@@ -33,28 +25,14 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(u => u.PhoneNumber)
             .HasMaxLength(20);
-
+        
         builder.Property(u => u.CreatedAt)
             .IsRequired()
-            .HasDefaultValueSql("CURRENT_TIMESTAMP"); // or DateTime.UtcNow
-
-        builder.Property(u => u.LastLoginAt)
-            .IsRequired(false);
+            .HasDefaultValueSql("CURRENT_TIMESTAMP");  // or DateTime.UtcNow
         
-        builder.Property(u => u.IsLocked)
+        builder.Property(u => u.EmailVerified)
             .IsRequired()
             .HasDefaultValue(false);
-        
-        builder.Property(u => u.FailedLoginAttempts)
-            .IsRequired()
-            .HasDefaultValue(0);
-        
-        builder.Property(u => u.IsDeleted)
-            .IsRequired()
-            .HasDefaultValue(false);
-        
-        builder.Property(u => u.DeletedAt)
-            .IsRequired(false);
         
         builder.Property(u => u.MfaEnabled)
             .IsRequired()
@@ -66,11 +44,33 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
                 v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList()
             );
 
+        builder.Property(u => u.LastLoginAt)
+            .IsRequired(false);
+        
+        builder.Property(u => u.FailedLoginAttempts)
+            .IsRequired()
+            .HasDefaultValue(0);
+        
+        builder.Property(u => u.IsLocked)
+            .IsRequired()
+            .HasDefaultValue(false);
+        
+        builder.Property(u => u.IsDeleted)
+            .IsRequired()
+            .HasDefaultValue(false);
+        
+        builder.Property(u => u.DeletedAt)
+            .IsRequired(false);
+
         builder.HasMany(u => u.Sessions)
             .WithOne()
             .HasForeignKey(s => s.UserId)
             .OnDelete(DeleteBehavior.Cascade);
 
+        builder.Property(u => u.PasswordHash)
+            .IsRequired()
+            .HasMaxLength(256);
+        
         builder.HasMany<RefreshToken>()
             .WithOne(rt => rt.User)
             .HasForeignKey(rt => rt.UserId)
