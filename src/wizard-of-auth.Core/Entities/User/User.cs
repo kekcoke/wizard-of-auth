@@ -3,22 +3,22 @@ namespace wizard_of_auth.Core.Entities;
 public class User
 {
     public Guid Id { get; private set; }
+    public Guid TenantId { get; set; }
     public string Email { get; private set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string PhoneNumber { get; set; }
-    public string PasswordHash { get; private set; }
+    public DateTime CreatedAt { get; private set; }
     public bool EmailVerified { get; private set; }
     public bool MfaEnabled { get; private set; }
     public List<string> MfaMethods { get; private set; }
-    public DateTime CreatedAt { get; private set; }
     public DateTime? LastLoginAt { get; private set; }
-    public bool IsLocked { get; private set; }
     public int FailedLoginAttempts { get; private set; }
+    public bool IsLocked { get; private set; }
     public bool IsDeleted { get; set; }
     public DateTime? DeletedAt { get; set; }
     public List<Session> Sessions { get; set; }
-    public Guid TenantId { get; set; }
+    public string PasswordHash { get; private set; }
     
     // Private constructor for EF Core or controlled creation
     private User(Guid id, 
