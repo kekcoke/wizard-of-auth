@@ -9,5 +9,6 @@ public enum TokenRevocationReason
     InvalidAudience,
     InvalidClaims,
     Malformed,
-    UserRequest
+    UserRequest,
+    CompromiseDetected
 }
