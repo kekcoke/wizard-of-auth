@@ -1,3 +1,4 @@
+namespace wizard_of_auth.API.Contracts.Responses;
 public class OidcClientRegistrationResponse
 {
     public string ClientId { get; init; } = string.Empty;

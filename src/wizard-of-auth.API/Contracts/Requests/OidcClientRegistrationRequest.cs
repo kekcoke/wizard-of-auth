@@ -1,3 +1,4 @@
+namespace wizard_of_auth.API.Contracts.Requests;
 public class OidcClientRegistrationRequest
 {
     public IReadOnlyList<string> RedirectUris { get; init; } = Array.Empty<string>();

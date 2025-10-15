@@ -1,7 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace wizard_of_auth.Core.Entities;
-
+namespace wizard_of_auth.API.Contracts.Responses;
 public class TokenResponse
 {
     [JsonPropertyName("access_token")]
