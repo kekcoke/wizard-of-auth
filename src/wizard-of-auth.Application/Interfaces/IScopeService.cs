@@ -1,7 +1,7 @@
 using wizard_of_auth.Core.Entities;
 using wizard_of_auth.Core.Entities.Scope;
 
-namespace wizard_of_auth.Core.Interfaces;
+namespace wizard_of_auth.Application.Interfaces;
 
 #region IScopeService - New
 

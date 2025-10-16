@@ -1,6 +1,6 @@
 using System.Security.Claims;
 
-namespace wizard_of_auth.Core.Entities;
+namespace wizard_of_auth.Application.Token;
 
 /// <summary>
 /// Options for ID token generation (OpenID Connect)

@@ -1,7 +1,7 @@
 using wizard_of_auth.Core.Entities;
 using wizard_of_auth.Core.Enums.Auth;
 
-namespace wizard_of_auth.Core.Interfaces;
+namespace wizard_of_auth.Application.Interfaces;
 
 #region ISessionService - New
 

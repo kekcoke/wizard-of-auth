@@ -1,10 +1,10 @@
+using wizard_of_auth.Application.Authorization.Models;
+using wizard_of_auth.Application.Device.Models;
+using wizard_of_auth.Application.Token;
 using wizard_of_auth.Core.Entities;
-using wizard_of_auth.Core.Entities.Authentication;
-using wizard_of_auth.Core.Entities.Authorization;
-using wizard_of_auth.Core.Entities.Device;
 using wizard_of_auth.Core.Enums.Actions.Token;
 
-namespace wizard_of_auth.Core.Interfaces;
+namespace wizard_of_auth.Application.Interfaces;
 
 /// <summary>
 /// Comprehensive token service supporting OAuth 2.0, OpenID Connect, and custom token types

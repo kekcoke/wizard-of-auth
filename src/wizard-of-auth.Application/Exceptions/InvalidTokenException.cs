@@ -1,4 +1,4 @@
-namespace wizard_of_auth.Core.Exceptions;
+namespace wizard_of_auth.Application.Exceptions;
 
 public class InvalidTokenException : Exception
 {
