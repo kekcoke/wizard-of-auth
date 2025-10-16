@@ -1,6 +1,6 @@
 using wizard_of_auth.Core.Enums;
 
-namespace wizard_of_auth.Core.Entities.Device;
+namespace wizard_of_auth.Application.Device.Models;
 
 /// <summary>
 /// Result of device code polling

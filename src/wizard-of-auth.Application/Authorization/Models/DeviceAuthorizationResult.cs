@@ -1,4 +1,4 @@
-namespace wizard_of_auth.Core.Entities.Authorization;
+namespace wizard_of_auth.Application.Authorization.Models;
 
 /// <summary>
 /// Result of device authorization initiation
