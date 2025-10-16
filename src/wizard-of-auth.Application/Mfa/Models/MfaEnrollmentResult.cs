@@ -1,6 +1,6 @@
 using wizard_of_auth.Core.Enums;
 
-namespace wizard_of_auth.Core.Entities.Mfa;
+namespace wizard_of_auth.Application.Mfa.Models;
 
 public class MfaEnrollmentResult
 {

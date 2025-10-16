@@ -1,6 +1,6 @@
 using wizard_of_auth.Core.Enums.Actions;
 
-namespace wizard_of_auth.Core.Entities.Authentication;
+namespace wizard_of_auth.Application.Mfa.Models;
 
 /// <summary>
 /// MFA verification result
