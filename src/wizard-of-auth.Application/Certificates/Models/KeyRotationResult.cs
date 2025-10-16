@@ -1,6 +1,6 @@
 using wizard_of_auth.Core.Enums.Certificates;
 
-namespace wizard_of_auth.Core.Entities.Certificates;
+namespace wizard_of_auth.Application.Certificates.Models;
 
 /// <summary>
 /// Key rotation result
