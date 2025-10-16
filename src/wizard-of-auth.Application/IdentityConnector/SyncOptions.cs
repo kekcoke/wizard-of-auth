@@ -1,4 +1,4 @@
-namespace wizard_of_auth.Core.Entities.IdentityConnector;
+namespace wizard_of_auth.Application.IdentityConnector;
 
 public class SyncOptions
 {

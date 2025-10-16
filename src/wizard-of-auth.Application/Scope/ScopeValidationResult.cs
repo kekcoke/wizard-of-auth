@@ -1,4 +1,4 @@
-namespace wizard_of_auth.Core.Entities.Scope;
+namespace wizard_of_auth.Application.Scope;
 
 public class ScopeValidationResult
 {
