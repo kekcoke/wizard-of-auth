@@ -1,4 +1,6 @@
-namespace wizard_of_auth.Core.Entities.Authentication;
+using wizard_of_auth.Core.Entities.Authentication;
+
+namespace wizard_of_auth.Application.Authentication.Models;
 
 /// <summary>
 /// Authentication attempt result
