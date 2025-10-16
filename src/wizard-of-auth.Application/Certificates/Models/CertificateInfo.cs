@@ -1,4 +1,6 @@
-namespace wizard_of_auth.Core.Entities.Certificates;
+using wizard_of_auth.Core.Entities.Certificates;
+
+namespace wizard_of_auth.Application.Certificates.Models;
 
 /// <summary>
 /// Individual certificate information
