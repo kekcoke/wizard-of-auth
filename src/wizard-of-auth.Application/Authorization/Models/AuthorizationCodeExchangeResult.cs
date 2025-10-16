@@ -1,4 +1,4 @@
-namespace wizard_of_auth.Core.Entities.Authentication;
+namespace wizard_of_auth.Application.Authorization.Models;
 
 /// <summary>
 /// Result of authorization code exchange
