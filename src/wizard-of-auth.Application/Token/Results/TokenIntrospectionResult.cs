@@ -1,4 +1,4 @@
-namespace wizard_of_auth.Core.Entities;
+namespace wizard_of_auth.Application.Token.Results;
 
 /// <summary>
 /// OAuth 2.0 Token Introspection result (RFC 7662)

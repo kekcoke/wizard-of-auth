@@ -1,7 +1,7 @@
 using System.Security.Claims;
 using wizard_of_auth.Core.Enums.Actions.Token;
 
-namespace wizard_of_auth.Core.Entities;
+namespace wizard_of_auth.Application.Token.Results;
 
 /// <summary>
 /// Token validation result with claims

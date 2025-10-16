@@ -1,4 +1,4 @@
-namespace wizard_of_auth.API.Contracts.Requests;
+namespace wizard_of_auth.Application.Token;
 
 public class TokenRequest
 {

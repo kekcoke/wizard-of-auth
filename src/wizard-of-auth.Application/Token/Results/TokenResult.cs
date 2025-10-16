@@ -1,4 +1,4 @@
-namespace wizard_of_auth.Core.Entities;
+namespace wizard_of_auth.Application.Token.Results;
 
 public class AccessTokenResult
 {

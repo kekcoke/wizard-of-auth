@@ -1,4 +1,4 @@
-namespace wizard_of_auth.Core.Entities;
+namespace wizard_of_auth.Application.Token.Results;
 
 /// <summary>
 /// ACTION: Result of tokens refresh operation. Contains both access token and optionally refresh token.
