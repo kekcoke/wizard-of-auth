@@ -1,3 +1,5 @@
+namespace wizard_of_auth.Infrastructure.Oidc.Models;
+
 public class OidcAuthenticationResponse
 {
     public string? Code { get; init; }

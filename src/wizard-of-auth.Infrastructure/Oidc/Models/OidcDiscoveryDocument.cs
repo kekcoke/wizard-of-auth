@@ -1,3 +1,5 @@
+namespace wizard_of_auth.Infrastructure.Oidc.Models;
+
 public class OidcDiscoveryDocument
 {
     public string Issuer { get; init; } = string.Empty;

@@ -1,3 +1,5 @@
+namespace wizard_of_auth.Infrastructure.Oidc.Models;
+
 public class OidcUserInfo
 {
     public string Sub { get; init; } = string.Empty;
