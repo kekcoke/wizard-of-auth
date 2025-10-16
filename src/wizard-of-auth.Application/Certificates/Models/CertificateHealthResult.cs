@@ -1,4 +1,4 @@
-namespace wizard_of_auth.Core.Entities.Certificates;
+namespace wizard_of_auth.Application.Certificates.Models;
 
 /// <summary>
 /// Certificate health check result
