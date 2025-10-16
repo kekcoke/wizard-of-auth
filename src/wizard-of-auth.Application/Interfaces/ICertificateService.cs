@@ -1,8 +1,10 @@
 using System.Security.Cryptography.X509Certificates;
+using wizard_of_auth.Application.Certificates.Models;
 using wizard_of_auth.Core.Entities;
 using wizard_of_auth.Core.Entities.Certificates;
 using wizard_of_auth.Core.Enums.Certificates;
 
+namespace wizard_of_auth.Application.Interfaces;
 /// <summary>
 /// Manages cryptographic certificates for token signing and encryption.
 /// Supports key rotation and JWKS (JSON Web Key Set) for OpenID Connect.

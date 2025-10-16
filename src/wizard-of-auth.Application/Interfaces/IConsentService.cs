@@ -1,7 +1,8 @@
+using wizard_of_auth.Application.Consent.Models;
 using wizard_of_auth.Core.Entities;
 using wizard_of_auth.Core.Entities.Consent;
 
-namespace wizard_of_auth.Core.Interfaces;
+namespace wizard_of_auth.Application.Interfaces;
 
 # region IConsentService - New
 
