@@ -1,4 +1,4 @@
-namespace wizard_of_auth.Core.Entities.Audit;
+namespace wizard_of_auth.Infrastructure.Audit;
 
 public class AuditLogEntry
 {
