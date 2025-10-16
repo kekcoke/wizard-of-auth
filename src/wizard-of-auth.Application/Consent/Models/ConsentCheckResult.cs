@@ -1,4 +1,4 @@
-namespace wizard_of_auth.Core.Entities.Consent;
+namespace wizard_of_auth.Application.Consent.Models;
 
 public class ConsentCheckResult
 {
