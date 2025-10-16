@@ -1,6 +1,6 @@
 using wizard_of_auth.Core.Enums;
 
-namespace wizard_of_auth.Core.Entities;
+namespace wizard_of_auth.Application.Token;
 
 /// <summary>
 /// Information about active tokens
